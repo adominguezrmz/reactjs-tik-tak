@@ -1,7 +1,8 @@
 {
   "name": "tik-tak",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "homepage" : "https://github.com/adominguezrmz/tik-tak",
   "dependencies": {
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
