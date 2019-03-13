@@ -51,7 +51,7 @@ ol, ul {
   margin-left: 20px;
 }
 
-.square-highlight {
+.square-selected {
   background-color: gray;
   color: white;
 

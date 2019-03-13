@@ -4,13 +4,13 @@ import Square from './square';
 class Board extends React.Component {
 
     renderSquare(i) {
-        let highlight = false;
+        let isSelected = this.props.lastSelected === i;
         if (this.props.winnerMoves) {
-            highlight = this.props.winnerMoves.indexOf(i) !== -1
+            isSelected = this.props.winnerMoves.indexOf(i) !== -1
         }
-        return (<Square
+        return (<Square key={i}
+            isSelected={isSelected}
             value={this.props.squares[i]}
-            highlight={highlight}
             onClick={() => this.props.onClick(i)}
         />);
     }
@@ -20,7 +20,7 @@ class Board extends React.Component {
         for (var i = 0; i < this.props.numCols; i++) {
             cols.push(this.renderSquare(row + i))
         }
-        return (<div className="board-row">{cols}</div>);
+        return (<div key={row} className="board-row">{cols}</div>);
     }
 
     render() {

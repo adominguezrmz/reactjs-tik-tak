@@ -12,7 +12,8 @@ class Game extends React.Component {
             }],
             stepNumber: 0,
             xIsNext: true,
-            numRows: 3
+            numRows: 3,
+            lastSelected: null
         };
     }
 
@@ -31,6 +32,7 @@ class Game extends React.Component {
             }]),
             stepNumber: history.length,
             xIsNext: !this.state.xIsNext,
+            lastSelected: i
         });
     }
 
@@ -56,6 +58,7 @@ class Game extends React.Component {
             <div className="game">
                 <div className="game-board">
                     <Board
+                        lastSelected={this.state.lastSelected}
                         numRows={this.state.numRows}
                         numCols={this.state.numRows}
                         winnerMoves={result && result.moves}
