@@ -37,9 +37,11 @@ class Game extends React.Component {
     }
 
     jumpTo(step) {
+        let currentSelected = this.state.lastSelected
         this.setState({
             stepNumber: step,
             xIsNext: (step % 2) === 0,
+            lastSelected: step > 0 ? currentSelected : null
         });
     }
 
@@ -68,7 +70,10 @@ class Game extends React.Component {
                 </div>
                 <div className="game-info">
                     <div>{status}</div>
-                    <History history={history} onClick={(i) => this.jumpTo(i)} />
+                    <History 
+                        stepNumber={this.state.stepNumber}
+                        history={history}
+                        onClick={(i) => this.jumpTo(i)} />
                 </div>
             </div>
         );

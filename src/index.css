@@ -60,6 +60,21 @@ ol, ul {
   animation-iteration-count: infinite;
 }
 
+.history-step button {
+  background-color: white;
+  cursor: pointer;
+  padding: 2px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
+.history-current-step button {
+  color: white;
+  font-weight: bold;
+  background-color: black;
+  border: 2px #b2b0b0 dashed;
+}
+
 @keyframes bounce {
   from { transform: translate3d(0, 0, 0);     }
   to   { transform: translate3d(0, 5px, 0); }
