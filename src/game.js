@@ -12,6 +12,7 @@ class Game extends React.Component {
             }],
             stepNumber: 0,
             xIsNext: true,
+            numRows: 3
         };
     }
 
@@ -55,6 +56,8 @@ class Game extends React.Component {
             <div className="game">
                 <div className="game-board">
                     <Board
+                        numRows={this.state.numRows}
+                        numCols={this.state.numRows}
                         winnerMoves={result && result.moves}
                         squares={current.squares}
                         onClick={(i) => this.handleClick(i)}
