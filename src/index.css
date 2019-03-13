@@ -34,11 +34,6 @@ ol, ul {
   width: 34px;
 }
 
-.square-highlight {
-  background-color: gray;
-  color: white;
-}
-
 .square:focus {
   outline: none;
 }
@@ -54,4 +49,31 @@ ol, ul {
 
 .game-info {
   margin-left: 20px;
+}
+
+.square-highlight {
+  background-color: gray;
+  color: white;
+
+  animation: bounce 0.5s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+  from { transform: translate3d(0, 0, 0);     }
+  to   { transform: translate3d(0, 5px, 0); }
+}
+
+/* Prefix Support */
+ball {
+  -webkit-animation-name: bounce;
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes bounce {
+  from { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+  to   { -webkit-transform: translate3d(0, 5px, 0); transform: translate3d(0, 5px, 0); }
 }
