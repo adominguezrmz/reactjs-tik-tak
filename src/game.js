@@ -17,12 +17,8 @@ class Game extends React.Component {
         };
     }
 
-    getWinner(squares, i) {
-        let cell = i
+    getWinner(squares, cell) {
         let result = calculateWinner(squares)
-        if (i === null) {
-            cell = this.state.lastSelected
-        }
         if (result) {
             result.winner = 'Winner: ' + result.winner
         }
@@ -67,7 +63,7 @@ class Game extends React.Component {
     render() {
         const history = this.state.history
         const current = history[this.state.stepNumber]
-        const result = this.getWinner(current.squares, null)
+        const result = this.getWinner(current.squares, this.state.lastSelected)
 
         let status;
         if (result) {
