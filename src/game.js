@@ -2,7 +2,6 @@ import React from 'react';
 import calculateWinner from './calculateWinner';
 import Board from './board';
 import History from './history';
-import TutorialExtraTasks from './tutorialExtraTasks';
 
 class Game extends React.Component {
     constructor(props) {
@@ -74,31 +73,26 @@ class Game extends React.Component {
             status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O')
         }
         return (
-            <div>
-                <h1>Tutorial: Intro to React</h1>
-                <div className="name-hidden">Adan Dominguez Ramirez</div>
-                <div className="game">
-                    <div className="game-board">
-                        <Board
-                            lastSelected={this.state.lastSelected}
-                            numRows={this.state.numRows}
-                            numCols={this.state.numRows}
-                            winnerMoves={result && result.moves}
-                            squares={current.squares}
-                            onClick={(i) => this.handleClick(i)}
-                        />
-                    </div>
-                    <div className="game-info">
-                        <div className="game-status">{status}</div>
-                        <History
-                            numRows={this.state.numRows}
-                            numCols={this.state.numRows}
-                            stepNumber={this.state.stepNumber}
-                            history={history}
-                            onClick={(i) => this.jumpTo(i)} />
-                    </div>
+            <div className="game">
+                <div className="game-board">
+                    <Board
+                        lastSelected={this.state.lastSelected}
+                        numRows={this.state.numRows}
+                        numCols={this.state.numRows}
+                        winnerMoves={result && result.moves}
+                        squares={current.squares}
+                        onClick={(i) => this.handleClick(i)}
+                    />
                 </div>
-                <TutorialExtraTasks />
+                <div className="game-info">
+                    <div className="game-status">{status}</div>
+                    <History
+                        numRows={this.state.numRows}
+                        numCols={this.state.numRows}
+                        stepNumber={this.state.stepNumber}
+                        history={history}
+                        onClick={(i) => this.jumpTo(i)} />
+                </div>
             </div>
         );
     }
