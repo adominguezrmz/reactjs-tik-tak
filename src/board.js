@@ -18,9 +18,12 @@ class Board extends React.Component {
     renderBoardRowCols(row) {
         let cols = []
         for (var i = 0; i < this.props.numCols; i++) {
-            cols.push(this.renderSquare(row + i))
+            cols.push(<td key={row + i}>
+                {this.renderSquare(row + i)}
+            </td>
+            );
         }
-        return (<div key={row} className="board-row">{cols}</div>);
+        return (<tr key={row}>{cols}</tr>);
     }
 
     render() {
@@ -29,9 +32,11 @@ class Board extends React.Component {
             board.push(this.renderBoardRowCols(this.props.numRows * i))
         }
         return (
-            <div>
-                {board}
-            </div>
+            <table>
+                <tbody>
+                    {board}
+                </tbody>
+            </table>
         );
     }
 }

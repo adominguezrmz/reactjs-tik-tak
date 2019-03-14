@@ -18,8 +18,8 @@ class History extends React.Component {
     render() {
         const ascSortOrder = this.state.ascSortOrder
         const toggleText = ascSortOrder
-            ? "Moves Descending"
-            : "Moves Ascending";
+            ? "Sort Descending"
+            : "Sort Ascending";
         const movesHist = this.props.history.slice()
         const len = movesHist.length - 1
         if (!ascSortOrder)
@@ -44,6 +44,7 @@ class History extends React.Component {
         });
         return (
             <div className="history-moves">
+                <strong>Moves: </strong>
                 <button onClick={() => this.handleToggleClick()}>{toggleText}</button>
                 <ol>{moves}</ol>
             </div>

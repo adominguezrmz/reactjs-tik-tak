@@ -9,12 +9,6 @@ ol, ul {
   padding-left: 30px;
 }
 
-.board-row:after {
-  clear: both;
-  content: "";
-  display: table;
-}
-
 .status {
   margin-bottom: 10px;
 }
@@ -73,6 +67,7 @@ ol, ul {
   font-weight: bold;
   background-color: black;
   border: 2px #b2b0b0 dashed;
+  padding: 4px;
 }
 
 @keyframes bounce {
@@ -81,7 +76,7 @@ ol, ul {
 }
 
 /* Prefix Support */
-ball {
+square-selected {
   -webkit-animation-name: bounce;
   -webkit-animation-duration: 0.5s;
   -webkit-animation-direction: alternate;

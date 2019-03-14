@@ -17,12 +17,29 @@ class Game extends React.Component {
         };
     }
 
+    getWinner(squares, i) {
+        let cell = i
+        let result = calculateWinner(squares)
+        if (i === null) {
+            cell = this.state.lastSelected
+        }
+        if (result) {
+            result.winner = 'Winner: ' + result.winner
+        }
+        else if (squares[cell] && this.state.stepNumber === squares.length) {
+            result = {
+                winner: 'Draw'
+            }
+        }
+        return result
+    }
+
     handleClick(i) {
         const history = this.state.history.slice(0, this.state.stepNumber + 1);
         const current = history[history.length - 1];
         const squares = current.squares.slice();
-
-        if (calculateWinner(squares) || squares[i]) {
+        const hasWinner = this.getWinner(squares, i);
+        if (hasWinner) {
             return;
         }
         squares[i] = this.state.xIsNext ? 'X' : 'O';
@@ -38,23 +55,25 @@ class Game extends React.Component {
 
     jumpTo(step) {
         let currentSelected = this.state.lastSelected
+        let currentwinner = this.state.winner
         this.setState({
             stepNumber: step,
             xIsNext: (step % 2) === 0,
-            lastSelected: step > 0 ? currentSelected : null
+            lastSelected: step > 0 ? currentSelected : null,
+            winner: step > 0 ? currentwinner : null,
         });
     }
 
     render() {
-        const history = this.state.history;
-        const current = history[this.state.stepNumber];
-        const result = calculateWinner(current.squares);
+        const history = this.state.history
+        const current = history[this.state.stepNumber]
+        const result = this.getWinner(current.squares, null)
 
         let status;
         if (result) {
-            status = 'Winner: ' + result.winner;
+            status = result.winner;
         } else {
-            status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+            status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O')
         }
         return (
             <div className="game">
@@ -70,7 +89,7 @@ class Game extends React.Component {
                 </div>
                 <div className="game-info">
                     <div>{status}</div>
-                    <History 
+                    <History
                         stepNumber={this.state.stepNumber}
                         history={history}
                         onClick={(i) => this.jumpTo(i)} />
