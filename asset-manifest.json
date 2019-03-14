@@ -1,13 +1,13 @@
 {
-  "main.css": "/tik-tak/static/css/main.16b73749.chunk.css",
-  "main.js": "/tik-tak/static/js/main.4d9703d1.chunk.js",
-  "main.js.map": "/tik-tak/static/js/main.4d9703d1.chunk.js.map",
-  "runtime~main.js": "/tik-tak/static/js/runtime~main.d0ae6279.js",
-  "runtime~main.js.map": "/tik-tak/static/js/runtime~main.d0ae6279.js.map",
-  "static/js/2.83a43218.chunk.js": "/tik-tak/static/js/2.83a43218.chunk.js",
-  "static/js/2.83a43218.chunk.js.map": "/tik-tak/static/js/2.83a43218.chunk.js.map",
-  "index.html": "/tik-tak/index.html",
-  "precache-manifest.5a8de9ed8c98702329a9bdc7109f2cf9.js": "/tik-tak/precache-manifest.5a8de9ed8c98702329a9bdc7109f2cf9.js",
-  "service-worker.js": "/tik-tak/service-worker.js",
-  "static/css/main.16b73749.chunk.css.map": "/tik-tak/static/css/main.16b73749.chunk.css.map"
+  "main.css": "/reactjs-tik-tak/static/css/main.2c65fef9.chunk.css",
+  "main.js": "/reactjs-tik-tak/static/js/main.dce5dbbd.chunk.js",
+  "main.js.map": "/reactjs-tik-tak/static/js/main.dce5dbbd.chunk.js.map",
+  "runtime~main.js": "/reactjs-tik-tak/static/js/runtime~main.7da2459f.js",
+  "runtime~main.js.map": "/reactjs-tik-tak/static/js/runtime~main.7da2459f.js.map",
+  "static/js/2.6f83445d.chunk.js": "/reactjs-tik-tak/static/js/2.6f83445d.chunk.js",
+  "static/js/2.6f83445d.chunk.js.map": "/reactjs-tik-tak/static/js/2.6f83445d.chunk.js.map",
+  "index.html": "/reactjs-tik-tak/index.html",
+  "precache-manifest.e5dff05b490188dd4d71efa05a90d8a8.js": "/reactjs-tik-tak/precache-manifest.e5dff05b490188dd4d71efa05a90d8a8.js",
+  "service-worker.js": "/reactjs-tik-tak/service-worker.js",
+  "static/css/main.2c65fef9.chunk.css.map": "/reactjs-tik-tak/static/css/main.2c65fef9.chunk.css.map"
 }

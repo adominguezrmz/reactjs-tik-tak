@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/tik-tak/precache-manifest.5a8de9ed8c98702329a9bdc7109f2cf9.js"
+  "/reactjs-tik-tak/precache-manifest.e5dff05b490188dd4d71efa05a90d8a8.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/tik-tak/index.html", {
+workbox.routing.registerNavigationRoute("/reactjs-tik-tak/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
