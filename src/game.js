@@ -2,6 +2,7 @@ import React from 'react';
 import calculateWinner from './calculateWinner';
 import Board from './board';
 import History from './history';
+import TutorialExtraTasks from './tutorialExtraTasks';
 
 class Game extends React.Component {
     constructor(props) {
@@ -35,13 +36,14 @@ class Game extends React.Component {
         const current = history[history.length - 1];
         const squares = current.squares.slice();
         const hasWinner = this.getWinner(squares, i);
-        if (hasWinner) {
+        if (hasWinner || squares[i]) {
             return;
         }
         squares[i] = this.state.xIsNext ? 'X' : 'O';
         this.setState({
             history: history.concat([{
                 squares: squares,
+                cell: i
             }]),
             stepNumber: history.length,
             xIsNext: !this.state.xIsNext,
@@ -72,24 +74,31 @@ class Game extends React.Component {
             status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O')
         }
         return (
-            <div className="game">
-                <div className="game-board">
-                    <Board
-                        lastSelected={this.state.lastSelected}
-                        numRows={this.state.numRows}
-                        numCols={this.state.numRows}
-                        winnerMoves={result && result.moves}
-                        squares={current.squares}
-                        onClick={(i) => this.handleClick(i)}
-                    />
+            <div>
+                <h1>Tutorial: Intro to React</h1>
+                <div className="name-hidden">Adan Dominguez Ramirez</div>
+                <div className="game">
+                    <div className="game-board">
+                        <Board
+                            lastSelected={this.state.lastSelected}
+                            numRows={this.state.numRows}
+                            numCols={this.state.numRows}
+                            winnerMoves={result && result.moves}
+                            squares={current.squares}
+                            onClick={(i) => this.handleClick(i)}
+                        />
+                    </div>
+                    <div className="game-info">
+                        <div className="game-status">{status}</div>
+                        <History
+                            numRows={this.state.numRows}
+                            numCols={this.state.numRows}
+                            stepNumber={this.state.stepNumber}
+                            history={history}
+                            onClick={(i) => this.jumpTo(i)} />
+                    </div>
                 </div>
-                <div className="game-info">
-                    <div>{status}</div>
-                    <History
-                        stepNumber={this.state.stepNumber}
-                        history={history}
-                        onClick={(i) => this.jumpTo(i)} />
-                </div>
+                <TutorialExtraTasks />
             </div>
         );
     }

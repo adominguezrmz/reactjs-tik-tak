@@ -9,6 +9,11 @@ ol, ul {
   padding-left: 30px;
 }
 
+h1, h2 {
+  color: burlywood;
+  text-decoration: underline;
+}
+
 .status {
   margin-bottom: 10px;
 }
@@ -45,6 +50,13 @@ ol, ul {
   margin-left: 20px;
 }
 
+.game-status {
+  color: burlywood;
+  padding: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
 .square-selected {
   background-color: gray;
   color: white;
@@ -65,9 +77,13 @@ ol, ul {
 .history-current-step button {
   color: white;
   font-weight: bold;
-  background-color: black;
+  background-color: gray;
   border: 2px #b2b0b0 dashed;
   padding: 4px;
+}
+
+.name-hidden {
+  visibility: hidden;
 }
 
 @keyframes bounce {
